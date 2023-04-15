@@ -1,5 +1,4 @@
-﻿using GeekShopping.CartAPI.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace GeekShopping.CartAPI.Data.ValueObjects
 {
