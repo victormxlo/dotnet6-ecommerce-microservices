@@ -56,7 +56,7 @@ namespace GeekShopping.CartAPI.Controllers
         {
             var status = await _repository.ApplyCoupon(vo.CartHeader.UserId, vo.CartHeader.CouponCode);
             if (!status) return NotFound();
-            return Ok(status);
+            return Ok(status);  
         }
 
         [HttpDelete("remove-coupon/{userId}")]
@@ -70,9 +70,11 @@ namespace GeekShopping.CartAPI.Controllers
         [HttpPost("checkout")]
         public async Task<ActionResult<CheckoutHeaderVO>> Checkout(CheckoutHeaderVO vo)
         {
+            if (vo?.UserId == null) return BadRequest();
             var cart = await _repository.FindCartByUserId(vo.UserId);
             if (cart == null) return NotFound();
             vo.CartDetails = cart.CartDetails;
+            vo.DateTime = DateTime.Now;
 
             // -> TASK RabbitMQ logic
 
