@@ -58,7 +58,7 @@ namespace GeekShopping.CartAPI.Controllers
         {
             var status = await _repository.ApplyCoupon(vo.CartHeader.UserId, vo.CartHeader.CouponCode);
             if (!status) return NotFound();
-            return Ok(status);  
+            return Ok(status);
         }
 
         [HttpDelete("remove-coupon/{userId}")]

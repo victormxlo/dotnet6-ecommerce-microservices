@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.CouponAPI", "G
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{CE610AD0-B35B-46A2-B7AF-CCF2AC00DA52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{BF80E35B-5147-43C4-B1BB-B6DB8E4FBE02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{BF80E35B-5147-43C4-B1BB-B6DB8E4FBE02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.OrderAPI", "GeekShopping.OrderAPI\GeekShopping.OrderAPI.csproj", "{0F1B41E2-AF50-4B5E-AFC2-4627B0A7FCD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{BF80E35B-5147-43C4-B1BB-B6DB8E4FBE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF80E35B-5147-43C4-B1BB-B6DB8E4FBE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF80E35B-5147-43C4-B1BB-B6DB8E4FBE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1B41E2-AF50-4B5E-AFC2-4627B0A7FCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1B41E2-AF50-4B5E-AFC2-4627B0A7FCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1B41E2-AF50-4B5E-AFC2-4627B0A7FCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1B41E2-AF50-4B5E-AFC2-4627B0A7FCD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{543CA32E-312B-4996-A446-5B2196932331} = {AD37B0E9-09D6-4841-8DC6-8ADC76D72B71}
 		{9EEDCFE9-F270-4C76-AAB4-ABCE2C635EF1} = {AD37B0E9-09D6-4841-8DC6-8ADC76D72B71}
 		{BF80E35B-5147-43C4-B1BB-B6DB8E4FBE02} = {CE610AD0-B35B-46A2-B7AF-CCF2AC00DA52}
+		{0F1B41E2-AF50-4B5E-AFC2-4627B0A7FCD5} = {AD37B0E9-09D6-4841-8DC6-8ADC76D72B71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A41C3A78-EFA5-4269-A426-481BA3CA061B}
