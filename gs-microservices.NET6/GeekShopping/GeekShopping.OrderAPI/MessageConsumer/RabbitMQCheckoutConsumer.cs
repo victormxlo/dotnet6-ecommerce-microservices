@@ -62,7 +62,7 @@ namespace GeekShopping.OrderAPI.MessageConsumer
                 CVV = vo.CVV,
                 DiscountAmount = vo.DiscountAmount,
                 Email = vo.Email,
-                ExpiryMonthYear = vo.ExpiryMothYear,
+                ExpiryMonthYear = vo.ExpiryMonthYear,
                 OrderTime = DateTime.Now,
                 PurchaseAmount = vo.PurchaseAmount,
                 PaymentStatus = false,
