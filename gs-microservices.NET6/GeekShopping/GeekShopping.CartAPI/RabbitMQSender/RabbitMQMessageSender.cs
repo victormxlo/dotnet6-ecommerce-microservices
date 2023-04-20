@@ -1,6 +1,7 @@
 ﻿using GeekShopping.CartAPI.Messages;
 using GeekShopping.MessageBus;
 using RabbitMQ.Client;
+using System;
 using System.Text;
 using System.Text.Json;
 
@@ -22,19 +23,13 @@ namespace GeekShopping.CartAPI.RabbitMQSender
 
         public void SendMessage(BaseMessage message, string queueName)
         {
-            var factory = new ConnectionFactory
+            if (ConnectionExists())
             {
-                HostName = _hostName,
-                UserName = _userName,
-                Password = _password
-            };
-
-            _connection = factory.CreateConnection();
-
-            using var channel = _connection.CreateModel();
-            channel.QueueDeclare(queue: queueName, false, false, false, arguments: null);
-            byte[] body = GetMessageAsByteArray(message);
-            channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: null, body: body);
+                using var channel = _connection.CreateModel();
+                channel.QueueDeclare(queue: queueName, false, false, false, arguments: null);
+                byte[] body = GetMessageAsByteArray(message);
+                channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: null, body: body);
+            }
         }
 
         private byte[] GetMessageAsByteArray(BaseMessage message)
@@ -46,6 +41,32 @@ namespace GeekShopping.CartAPI.RabbitMQSender
             var json = JsonSerializer.Serialize<CheckoutHeaderVO>((CheckoutHeaderVO)message, options);
             var body = Encoding.UTF8.GetBytes(json);
             return body;
+        }
+
+        private void CreateConnection()
+        {
+            try
+            {
+                var factory = new ConnectionFactory
+                {
+                    HostName = _hostName,
+                    UserName = _userName,
+                    Password = _password
+                };
+                _connection = factory.CreateConnection();
+            }
+            catch (Exception)
+            {
+                // Log exception
+                throw;
+            }
+        }
+
+        private bool ConnectionExists()
+        {
+            if (_connection != null) return true;
+            CreateConnection();
+            return _connection != null;
         }
     }
 }
