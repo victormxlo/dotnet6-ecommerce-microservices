@@ -29,7 +29,7 @@ builder.Services.AddSingleton(new EmailRepository(dbContextBuilder.Options));
 
 builder.Services.AddScoped<IEmailRepository, EmailRepository>();
 
-//builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
+builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
 
 builder.Services.AddControllers();
 
