@@ -16,7 +16,7 @@ namespace GeekShopping.OrderAPI.MessageConsumer
         private readonly OrderRepository _repository;
         private IConnection _connection;
         private IModel _channel;
-        private const string ExchangeName = "FanoutPaymentUpdateExchange";
+        private const string ExchangeName = "DirectPaymentUpdateExchange";
         string queueName = "";
 
         public RabbitMQPaymentConsumer(OrderRepository repository)
