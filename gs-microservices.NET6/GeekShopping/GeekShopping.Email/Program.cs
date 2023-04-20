@@ -25,9 +25,10 @@ dbContextBuilder.UseMySql(
     new MySqlServerVersion(new Version(8, 0, 32))
 );
 
-//builder.Services.AddSingleton(new EmailRepository(dbContextBuilder.Options));
+builder.Services.AddSingleton(new EmailRepository(dbContextBuilder.Options));
 
-//builder.Services.AddScoped<IEmailRepository, EmailRepository>();
+builder.Services.AddScoped<IEmailRepository, EmailRepository>();
+
 //builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
 
 builder.Services.AddControllers();
