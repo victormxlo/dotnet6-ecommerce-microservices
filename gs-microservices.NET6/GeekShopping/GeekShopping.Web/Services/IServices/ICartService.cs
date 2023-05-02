@@ -1,4 +1,5 @@
 ﻿using GeekShopping.Web.Models;
+using System.Threading.Tasks;
 
 namespace GeekShopping.Web.Services.IServices
 {
@@ -14,5 +15,5 @@ namespace GeekShopping.Web.Services.IServices
         Task<bool> ClearCart(string userId, string token);
 
         Task<object> Checkout(CartHeaderViewModel cartHeader, string token);
-    }
+     }
 }

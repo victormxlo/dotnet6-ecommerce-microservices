@@ -1,28 +1,27 @@
-﻿ {
-  "$schema": "https://json.schemastore.org/launchsettings.json",
+﻿{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:61431",
-      "sslPort": 4460
+      "applicationUrl": "http://localhost:16437",
+      "sslPort": 4480
     }
   },
   "profiles": {
-    "GeekShopping.Email": {
+    "GeekShopping.APIGateway": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:4460;http://localhost:4461",
+      "hotReloadProfile": "aspnetcore",
+      "applicationUrl": "https://localhost:4480;http://localhost:4481",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:4480/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

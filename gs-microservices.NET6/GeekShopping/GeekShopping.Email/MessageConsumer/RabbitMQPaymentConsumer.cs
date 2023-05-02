@@ -52,14 +52,14 @@ namespace GeekShopping.Email.MessageConsumer
         }
 
         private async Task ProcessLogs(UpdatePaymentResultMessage message)
-        {
+        {         
             try
             {
                 await _repository.LogEmail(message);
             }
             catch (Exception)
             {
-                // Log
+                //Log
                 throw;
             }
         }

@@ -25,11 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.OrderAPI", "Ge
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payments", "Payments", "{1A246110-8711-4DF9-A4A6-B7FD38659328}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.PaymentProcessor", "GeekShopping.PaymentProcessor\GeekShopping.PaymentProcessor.csproj", "{AFF1DCC8-7860-462C-945A-0E3DF7011D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.PaymentProcessor", "GeekShopping.PaymentProcessor\GeekShopping.PaymentProcessor.csproj", "{AFF1DCC8-7860-462C-945A-0E3DF7011D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.PaymentAPI", "GeekShopping.PaymentAPI\GeekShopping.PaymentAPI.csproj", "{F07260D3-79E0-4B8D-AE26-C289006EB87D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.PaymentAPI", "GeekShopping.PaymentAPI\GeekShopping.PaymentAPI.csproj", "{F07260D3-79E0-4B8D-AE26-C289006EB87D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.Email", "GeekShopping.Email\GeekShopping.Email.csproj", "{78A36276-5C35-4960-A4D6-12C73AF76024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Email", "GeekShopping.Email\GeekShopping.Email.csproj", "{78A36276-5C35-4960-A4D6-12C73AF76024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{18A3F0C7-A0B9-446A-B753-B269DBAC4217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.APIGateway", "GeekShopping.APIGateway\GeekShopping.APIGateway.csproj", "{1A6C05AD-8AE5-4E29-BEA0-54120FB3880A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{78A36276-5C35-4960-A4D6-12C73AF76024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78A36276-5C35-4960-A4D6-12C73AF76024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78A36276-5C35-4960-A4D6-12C73AF76024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A6C05AD-8AE5-4E29-BEA0-54120FB3880A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A6C05AD-8AE5-4E29-BEA0-54120FB3880A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A6C05AD-8AE5-4E29-BEA0-54120FB3880A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A6C05AD-8AE5-4E29-BEA0-54120FB3880A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,7 @@ Global
 		{AFF1DCC8-7860-462C-945A-0E3DF7011D86} = {1A246110-8711-4DF9-A4A6-B7FD38659328}
 		{F07260D3-79E0-4B8D-AE26-C289006EB87D} = {AD37B0E9-09D6-4841-8DC6-8ADC76D72B71}
 		{78A36276-5C35-4960-A4D6-12C73AF76024} = {AD37B0E9-09D6-4841-8DC6-8ADC76D72B71}
+		{1A6C05AD-8AE5-4E29-BEA0-54120FB3880A} = {18A3F0C7-A0B9-446A-B753-B269DBAC4217}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A41C3A78-EFA5-4269-A426-481BA3CA061B}

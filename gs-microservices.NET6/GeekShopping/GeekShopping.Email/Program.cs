@@ -18,13 +18,13 @@ var connection = builder.Configuration["MySQlConnection:MySQlConnectionString"];
 
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(
     connection,
-    new MySqlServerVersion(new Version(8, 0, 32)))
+    new MySqlServerVersion(new Version(8, 0, 29)))
 );
 
 var dbContextBuilder = new DbContextOptionsBuilder<MySQLContext>();
 dbContextBuilder.UseMySql(
     connection,
-    new MySqlServerVersion(new Version(8, 0, 32))
+    new MySqlServerVersion(new Version(8, 0, 29))
 );
 
 builder.Services.AddSingleton(new EmailRepository(dbContextBuilder.Options));

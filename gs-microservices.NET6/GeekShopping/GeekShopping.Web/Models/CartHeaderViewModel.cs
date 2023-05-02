@@ -1,4 +1,6 @@
-﻿namespace GeekShopping.Web.Models
+﻿using System;
+
+namespace GeekShopping.Web.Models
 {
     public class CartHeaderViewModel
     {
@@ -15,6 +17,6 @@
         public string Email { get; set; }
         public string CardNumber { get; set; }
         public string CVV { get; set; }
-        public string ExpiryMonthYear { get; set; }
+        public string ExpiryMothYear { get; set; }
     }
 }

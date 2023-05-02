@@ -3,6 +3,11 @@ using GeekShopping.Web.Services.IServices;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GeekShopping.Web.Controllers
 {
@@ -12,7 +17,9 @@ namespace GeekShopping.Web.Controllers
         private readonly ICartService _cartService;
         private readonly ICouponService _couponService;
 
-        public CartController(IProductService productService, ICartService cartService, ICouponService couponService)
+        public CartController(IProductService productService,
+            ICartService cartService,
+            ICouponService couponService)
         {
             _productService = productService;
             _cartService = cartService;
@@ -24,7 +31,7 @@ namespace GeekShopping.Web.Controllers
         {
             return View(await FindUserCart());
         }
-
+        
         [HttpPost]
         [ActionName("ApplyCoupon")]
         public async Task<IActionResult> ApplyCoupon(CartViewModel model)
@@ -40,7 +47,7 @@ namespace GeekShopping.Web.Controllers
             }
             return View();
         }
-
+        
         [HttpPost]
         [ActionName("RemoveCoupon")]
         public async Task<IActionResult> RemoveCoupon()
@@ -64,7 +71,7 @@ namespace GeekShopping.Web.Controllers
 
             var response = await _cartService.RemoveFromCart(id, token);
 
-            if (response)
+            if(response)
             {
                 return RedirectToAction(nameof(CartIndex));
             }
@@ -113,8 +120,8 @@ namespace GeekShopping.Web.Controllers
             {
                 if (!string.IsNullOrEmpty(response.CartHeader.CouponCode))
                 {
-                    var coupon = await _couponService.GetCoupon(response.CartHeader.CouponCode, token);
-
+                    var coupon = await _couponService.
+                        GetCoupon(response.CartHeader.CouponCode, token);
                     if (coupon?.CouponCode != null)
                     {
                         response.CartHeader.DiscountAmount = coupon.DiscountAmount;
